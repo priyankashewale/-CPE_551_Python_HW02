@@ -3,8 +3,8 @@ import math
 import pytest
 import answer
 
-class TestAnswer():
 
+class TestAnswer():
     __correct__ = 0
     __total__ = 0
 
@@ -16,143 +16,124 @@ class TestAnswer():
 
     @classmethod
     def teardown_class(cls):
+        print(f"Score:{(cls.__correct__ / cls.__total__) * 100}%")
 
-
-        print(f"Score:{(cls.__correct__/cls.__total__)*100}%")
-    def test_tuple_x(self):
+    def test_add_binary_1(self):
         TestAnswer.__total__ += 1
-        x,t2,t3,n = answer.tuple_op()
-        assert(x==13)
+        result = answer.add_binary("", "")
+        assert (result == None)
         TestAnswer.__correct__ += 1
 
-    def test_tuple_y(self):
+    def test_add_binary_2(self):
         TestAnswer.__total__ += 1
-        x, t2, t3, n = answer.tuple_op()
-        assert (t2 == (100, 99, 100, 999))
+        result = answer.add_binary("1", "0")
+        assert (result == "1")
         TestAnswer.__correct__ += 1
 
-    def test_tuple_t2(self):
+    def test_add_binary_3(self):
         TestAnswer.__total__ += 1
-        x, t2, t3, n = answer.tuple_op()
-        assert (t3 == (100, 99, 100, 999,5,6))
+        result = answer.add_binary("1", "1")
+        assert (result == "10")
         TestAnswer.__correct__ += 1
 
-    def test_tuple_n(self):
+    def test_add_binary_4(self):
         TestAnswer.__total__ += 1
-        x, t2, t3, n = answer.tuple_op()
-        assert (n == 999)
+        result = answer.add_binary("10", "11")
+        assert (result == "101")
         TestAnswer.__correct__ += 1
 
-    def test_calculate_c(self):
+    def test_add_binary_5(self):
         TestAnswer.__total__ += 1
-        c,q,type_q = answer.calculate()
-        assert (c == 7)
+        result = answer.add_binary("11", "11")
+        assert (result == "110")
         TestAnswer.__correct__ += 1
 
-    def test_calculate_q(self):
+    def test_add_binary_6(self):
         TestAnswer.__total__ += 1
-        c,q,type_q = answer.calculate()
-        assert (q == (7-1)/5.0)
+        result = answer.add_binary("11", "111")
+        assert (result == "1010")
         TestAnswer.__correct__ += 1
 
-    def test_calculate_type(self):
+    def test_add_binary_7(self):
         TestAnswer.__total__ += 1
-        c,q,type_q = answer.calculate()
-        assert (type_q == type((7-1)/5.0))
+        result = answer.add_binary("12", "111")
+        assert (result == None)
         TestAnswer.__correct__ += 1
 
-    def test_format_pi(self):
+    def test_plus_one_1(self):
         TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (string_pi == '{0:.6f}'.format(3.141592653589793))
-
-        TestAnswer.__correct__ += 1
-    def test_format_comma(self):
-        TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (comma_string == "{:,}".format(100000000))
-
-        TestAnswer.__correct__ += 1
-    def test_format_exp(self):
-        TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (exp_string == "{:.2e}".format(100000000))
-
+        result = answer.plus_one([1, 2, 3])
+        assert (result == [1, 2, 4])
         TestAnswer.__correct__ += 1
 
-    def test_format_center(self):
+    def test_plus_one_2(self):
         TestAnswer.__total__ += 1
-        string_pi,comma_string,exp_string,center_string,left_string = answer.string_formating()
-        assert (center_string == "{:^10d}".format(13))
-
+        result = answer.plus_one([1, 0, 9, 9])
+        assert (result == [1, 1, 0, 0])
         TestAnswer.__correct__ += 1
 
-    def test_format_left(self):
+    def test_plus_one_3(self):
         TestAnswer.__total__ += 1
-        string_pi, comma_string, exp_string, center_string, left_string = answer.string_formating()
-        assert (left_string == "{:0>2d}".format(13))
-
+        result = answer.plus_one([9, 9])
+        assert (result == [1, 0, 0])
         TestAnswer.__correct__ += 1
 
-    def test_build_in_left(self):
+    def test_plus_one_4(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (math_pi == math.pi)
-
+        result = answer.plus_one([0])
+        assert (result == [1])
         TestAnswer.__correct__ += 1
 
-    def test_build_in_pi(self):
+    def test_plus_one_5(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (math_pi == math.pi)
-
+        result = answer.plus_one([2, 0, 7, 7])
+        assert (result == [2, 0, 7, 8])
         TestAnswer.__correct__ += 1
 
-    def test_build_in_e(self):
+    def test_roman_to_integers_1(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (math_e == math.e)
-
+        result = answer.roman_to_integers("III")
+        assert (result == 3)
         TestAnswer.__correct__ += 1
 
-    def test_build_in_sin_pi(self):
+    def test_roman_to_integers_2(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (sin_pi == math.sin(math.pi))
-
+        result = answer.roman_to_integers("IV")
+        assert (result == 4)
         TestAnswer.__correct__ += 1
 
-    def test_build_in_sqrt(self):
+    def test_roman_to_integers_3(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (square_root_2 == math.sqrt(2))
-
+        result = answer.roman_to_integers("IX")
+        assert (result == 9)
         TestAnswer.__correct__ += 1
 
-    def test_build_in_abs(self):
+    def test_roman_to_integers_4(self):
         TestAnswer.__total__ += 1
-        math_pi,math_e,sin_pi,square_root_2,abs_2 = answer.build_in()
-        assert (abs_2 == abs(-2))
-
+        result = answer.roman_to_integers("LVIII")
+        assert (result == 58)
         TestAnswer.__correct__ += 1
 
-    def test_set_add(self):
+    def test_roman_to_integers_5(self):
         TestAnswer.__total__ += 1
-        S1,union_s,sum_s = answer.set_op()
-        assert (S1 == {0, 1, 2, 3, 4})
-
+        result = answer.roman_to_integers("MCMXCIV")
+        assert (result == 1994)
         TestAnswer.__correct__ += 1
 
-    def test_set_union(self):
+    def test_roman_to_integers_6(self):
         TestAnswer.__total__ += 1
-        S1,union_s,sum_s = answer.set_op()
-        assert (union_s == {0, 1, 2, 3, 4, 5, 6})
-
+        result = answer.roman_to_integers("MCMLXXXVI")
+        assert (result == 1986)
         TestAnswer.__correct__ += 1
 
-    def test_set_sum(self):
+    def test_roman_to_integers_7(self):
         TestAnswer.__total__ += 1
-        S1, union_s, sum_s = answer.set_op()
-        assert (sum_s == sum({0, 1, 2, 3, 4, 5, 6}))
+        result = answer.roman_to_integers("MCMLXXXVI")
+        assert (result == 1986)
+        TestAnswer.__correct__ += 1
 
+    def test_roman_to_integers_8(self):
+        TestAnswer.__total__ += 1
+        result = answer.roman_to_integers("MMMCMXCIX")
+        assert (result == 3999)
         TestAnswer.__correct__ += 1

@@ -3,123 +3,91 @@
 """
 Python Core object Types
 """
-import math
-def tuple_op():
-
-    # Assign the first element of the tuple "t1" to variable x
-    t1 = (13, 100, 99, 100, 999)
-
-    x =
-
-    # Assign the second to the last element of the tuple "t1" to variable t2
-
-    t2 =
-
-    # Concatenate tuple (5,6) and assign it to a new variable t3
-
-    t3 =
-
-    # What is the maximum value in the tuple "t2"? Assign it to variable n
-    n =
-
-    return x,t2,t3,n
-def calculate():
-    a=3
-    b=4
-
-    # Add a and b then assign the sum to variable c
-
-    c =
-
-    # Subtract c by 1 then divide the Difference by 5.0 then assign the Quotient to variable q
-
-    q =
-
-    # Assign the type of q to a new variable type_q
-
-    type_q =
-
-    return c,q,type_q
-
-def string_formating():
-
-    math_pi = 3.141592653589793
-
-    # Format the variable math_pi as a string, keep the 6 decimal space, assign it to variable string_pi
-
-    string_pi =
-
-    ####
-    large_number=100000000
-
-    # Format large_number to a string comma_string with Comma separator.
-
-    comma_string =
-
-    # Format large_number to a string exp_string with Exponent notation(keep 2 exponent space).
-
-    exp_string =
-
-    ####
-    small_number =13
-
-    #Format small_number to a string center_string in Center aligned(width 10) format.
-
-    center_string =
-
-    # Left pad small_number with zeros(left padding, width 2) to string left_string
-
-    left_string =
-
-    return string_pi,comma_string,exp_string,center_string,left_string
 
 
+def add_binary(a, b):
+    """
+    This is to review binary operations
+    ============================================================
+    Given two binary strings, return their sum (also a binary string) assign it to variable result.
+    Return None if one of the input strings are empty or contains characters other 1 or 0.
+    Example 1:
+                Input: a = "11", b = "1"
+                Output: result = "100"
+    Example 2:
+                Input: a = "1010", b = "1011"
+                Output: result = "11101"
+    """
 
-def build_in():
-    #### Use math package for the following questions
-    # Assign Ratio of circumference to diameter(Pi) to a variable math_pi
-
-    math_pi =
-
-    # Assign Euler's number (e) to a variable math_e
-
-    math_e =
-
-    # Assign the sin value of math_pi to variable sin_pi
-
-    sin_pi =
-
-    # Assign the square root of 2 to variable square_root_2
-
-    square_root_2 =
-
-    #### Use build in function
-    # Assign absolute value of -2 to variable abs_2
-
-    abs_2=
-
-    return math_pi,math_e,sin_pi,square_root_2,abs_2
-
-def set_op():
-    S1 = {1, 2, 3, 4}
-    S2 = {3, 4, 5, 6}
-
-    # Add 0 to set S1
+    return result
 
 
+def plus_one(digits):
+    """
+    This is to review loops and if statements
+    ============================================================
+    Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
+    You can do this in-place!
+    The digits are stored such that the most significant digit is at the head of the list, and each
+    element in the array contain a single digit.
+    You may assume the integer does not contain any leading zero, except the number 0 itself.
+    Example 1:
+            Input: digits = [1, 2, 3]
+            Output: digits = [1, 2, 4]
+            Explanation: The array represents the integer 123.
+    Example 2:
+            Input: digits = [1, 0, 9, 9]
+            Output: digits = [1, 1, 0, 0]
+    Example 2:
+            Input: digits = [9, 9]
+            Output: digits = [1, 0, 0]
+    """
 
-    # Assign the union of S1 and S2 to variable union_s
+    return digits
 
-    union_s=
 
-    # Assign the sum of all items in union_s to variable sum_s
+def roman_to_integers(roman_string):
+    """
+    This is to review loops, if statements and dictionaries
+    ============================================================
+    Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+    Symbol       Value
+    I             1
+    V             5
+    X             10
+    L             50
+    C             100
+    D             500
+    M             1000
+    For example, two is written as II in Roman numeral, just two one's added together.
+    Twelve is written as, XII, which is simply X + II. The number twenty seven is written
+    as XXVII, which is XX + V + II.
+    Roman numerals are usually written largest to smallest from left to right. However,
+    the numeral for four is not IIII. Instead, the number four is written as IV. Because
+    the one is before the five we subtract it making four. The same principle applies to
+    the number nine, which is written as IX. There are six instances where subtraction is used:
+    - I can be placed before V (5) and X (10) to make 4 and 9.
+    - X can be placed before L (50) and C (100) to make 40 and 90.
+    - C can be placed before D (500) and M (1000) to make 400 and 900.
+    Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
+    The input is guaranteed to be valid Roman string
+    Example 1:
+        Input: "III"
+        Output: 3
+    Example 2:
+        Input: "IV"
+        Output: 4
+    Example 3:
+        Input: "IX"
+        Output: 9
+    Example 4:
+        Input: "LVIII"
+        Output: 58
+        Explanation: C = 100, L = 50, XXX = 30 and III = 3.
+    Example 5:
+        Input: "MCMXCIV"
+        Output: 1994
+        Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+    """
 
-    sum_s=
-
-    return S1,union_s,sum_s
-
-tuple_op()
-calculate()
-string_formating()
-build_in()
-set_op()
+    return integer
